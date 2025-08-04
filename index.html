@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Feliz Aniversário Amor</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: linear-gradient(to bottom, #b3d9ff, #cce7ff, #e6f2ff, #f0f8ff);
+      font-family: 'Segoe UI', sans-serif;
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .falling-text {
+      position: absolute;
+      top: -50px;
+      color: rgba(0, 102, 204, 0.5); /* mais visível */
+      font-size: 28px;
+      font-weight: bold;
+      user-select: none;
+      pointer-events: none;
+      animation: fall linear infinite;
+      text-shadow: 1px 1px 2px rgba(0,0,128,0.4); /* sombra leve azul */
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh);
+        opacity: 0;
+      }
+    }
+
+    .letter {
+      background: linear-gradient(to right, #e6f2ff, #ffffff);
+      border: 2px solid #87CEFA;
+      padding: 40px;
+      width: 60%;
+      max-width: 600px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+      border-radius: 15px;
+      text-align: center;
+      z-index: 2;
+      position: relative;
+    }
+
+    .letter h1 {
+      color: #005fbb;
+      margin-bottom: 20px;
+    }
+
+    .letter p {
+      color: #333;
+      font-size: 1.2em;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="letter">
+    <h1>Minha Princesa </h1>
+    <p>
+      Hoje é uma dia muito especial, pois é o seu aniversário! Quero te desejar toda felicidade do mundo, muito amor, saúde e alegria. Eu só consigo pensar em como sou sortudo por ter você na minha vida, amo cada segundo com você, cada momento é especial. Feliz aniversário, meu amor. Que seu dia seja tão lindo quanto você. E que eu esteja ao seu lado nos proximos anos. EU TE AMO INFINITAMENTE!
+    </p>
+  </div>
+
+  <script>
+    // Criação do texto caindo com mais destaque
+    function createFallingText() {
+      const text = document.createElement('div');
+      text.classList.add('falling-text');
+      text.innerText = 'Feliz aniversário amor';
+
+      text.style.left = Math.random() * 100 + 'vw';
+      text.style.animationDuration = (Math.random() * 2 + 3) + 's'; // queda um pouco mais rápida
+      text.style.fontSize = (Math.random() * 10 + 24) + 'px';
+      text.style.opacity = Math.random() * 0.5 + 0.5;
+
+      document.body.appendChild(text);
+
+      setTimeout(() => {
+        text.remove();
+      }, 8000);
+    }
+
+    setInterval(createFallingText, 250); // mais frequente
+  </script>
+
+</body>
+</html>
